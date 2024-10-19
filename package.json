@@ -1,97 +1,90 @@
 {
-  "activationEvents": [
-    "onCommand:bennycode.sort-everything.sortFile"
-  ],
-  "author": "Benny Neugebauer",
-  "categories": [
-    "Other"
-  ],
-  "contributes": {
-    "commands": [
-      {
-        "command": "bennycode.sort-everything.sortFile",
-        "title": "Sort Everything"
-      }
-    ],
-    "keybindings": [
-      {
-        "command": "bennycode.sort-everything.sortFile",
-        "key": "alt+shift+l",
-        "when": "editorTextFocus"
-      }
-    ]
-  },
-  "dependencies": {
-    "@types/jsonabc": "^2.3.1",
-    "json5": "^2.2.3",
-    "jsonabc": "^2.3.1",
-    "yaml": "^2.2.2"
-  },
-  "description": "Sort JSON, YAML and plain text files by using a keyboard shortcut.",
-  "devDependencies": {
-    "@types/jest": "^29.4.0",
-    "@types/node": "^18.14.4",
-    "@types/vscode": "^1.68.0",
-    "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "@typescript-eslint/parser": "^5.54.0",
-    "@vscode/test-electron": "^2.3.0",
-    "cross-env": "^7.0.3",
-    "eslint": "^8.35.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-sort-keys-fix": "^1.1.2",
-    "eslint-plugin-typescript-sort-keys": "^2.1.0",
-    "eslint-plugin-unused-imports": "^2.0.0",
-    "jest": "^29.4.3",
-    "prettier": "^2.8.4",
-    "ts-jest": "^29.0.5",
-    "ts-loader": "^9.4.2",
-    "typescript": "^4.9.5",
-    "webpack": "^5.76.0",
-    "webpack-cli": "^5.0.1"
-  },
-  "displayName": "Sort Everything",
-  "engines": {
-    "vscode": "^1.68.0"
-  },
-  "galleryBanner": {
-    "color": "#1739EE",
-    "theme": "dark"
-  },
-  "homepage": "https://github.com/bennycode/sort-everything",
-  "icon": "assets/icon.png",
-  "keywords": [
-    "sorting",
-    "sort",
-    "yaml",
-    "yml",
-    "plaintext",
-    "text",
-    "json",
-    "lines",
-    "code"
-  ],
-  "license": "MIT",
-  "main": "./dist/extension.js",
-  "name": "sort-everything",
-  "publisher": "bennycode",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bennycode/sort-everything.git"
-  },
-  "scripts": {
-    "compile": "webpack",
-    "fix": "yarn lint:prettier --write && yarn lint:eslint --fix --quiet",
-    "lint": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx .",
-    "lint:eslint": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx .",
-    "lint:prettier": "prettier --ignore-path .gitignore --loglevel error \"**/*.{json,scss,yml}\"",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "postversion": "git push origin main && git push origin --tags",
-    "pretest": "yarn run compile && yarn run lint",
-    "test": "tsc --noEmit && yarn test:unit",
-    "test:unit": "cross-env NODE_ENV=test jest ./src --passWithNoTests",
-    "vscode:prepublish": "yarn run package",
-    "watch": "webpack --watch"
-  },
-  "version": "1.4.1"
+	"activationEvents": [
+		"onCommand:bennycode.sort-everything.sortFile"
+	],
+	"author": "Adam Liang",
+	"categories": [
+		"Other"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "bennycode.sort-everything.sortFile",
+				"title": "Sort Everything"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "bennycode.sort-everything.sortFile",
+				"key": "alt+shift+l",
+				"when": "editorTextFocus"
+			}
+		]
+	},
+	"dependencies": {
+		"@types/jsonabc": "^2.3.1",
+		"json5": "^2.2.3",
+		"jsonabc": "^2.3.1",
+		"yaml": "^2.2.2"
+	},
+	"description": "Sort JSON, YAML and plain text files by using a keyboard shortcut.",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/jest": "^29.4.0",
+		"@types/node": "^18.14.4",
+		"@types/vscode": "^1.68.0",
+		"@typescript-eslint/eslint-plugin": "^5.54.0",
+		"@typescript-eslint/parser": "^5.54.0",
+		"@vscode/test-electron": "^2.3.0",
+		"cross-env": "^7.0.3",
+		"typescript": "^4.9.5",
+		"vitest": "^2.1.3",
+		"webpack": "^5.76.0",
+		"webpack-cli": "^5.0.1"
+	},
+	"displayName": "Sort Everything",
+	"engines": {
+		"vscode": "^1.68.0"
+	},
+	"galleryBanner": {
+		"color": "#1739EE",
+		"theme": "dark"
+	},
+	"homepage": "https://github.com/bennycode/sort-everything",
+	"icon": "assets/icon.png",
+	"keywords": [
+		"sorting",
+		"sort",
+		"yaml",
+		"yml",
+		"plaintext",
+		"text",
+		"json",
+		"lines",
+		"code"
+	],
+	"license": "MIT",
+	"main": "./dist/extension.js",
+	"name": "sort-everything",
+	"publisher": "bennycode",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bennycode/sort-everything.git"
+	},
+	"scripts": {
+		"compile": "webpack",
+		"fix": "yarn lint:prettier --write && yarn lint:eslint --fix --quiet",
+		"lint": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx .",
+		"lint:eslint": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx .",
+		"lint:prettier": "prettier --ignore-path .gitignore --loglevel error \"**/*.{json,scss,yml}\"",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"postversion": "git push origin main && git push origin --tags",
+		"pretest": "yarn run compile && yarn run lint",
+		"test": "tsc --noEmit && yarn test:unit",
+		"test:unit": "cross-env NODE_ENV=test jest ./src --passWithNoTests",
+		"vscode:prepublish": "yarn run package",
+		"watch": "webpack --watch"
+	},
+	"type": "module",
+	"version": "1.4.1"
 }
