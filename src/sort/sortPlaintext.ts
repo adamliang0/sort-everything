@@ -1,10 +1,10 @@
-import type {SortFunction} from './SortFunction';
+import type { SortFunction } from './SortFunction';
 
-export const sortPlaintext: SortFunction = function (input: string) {
+export const sortPlaintext: SortFunction = (input: string) => {
   try {
     const sorted = input
       .split('\n')
-      .sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}))
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }))
       .join('\n');
     return {
       // Remove last element so that line break is not taken into consideration on next sort
